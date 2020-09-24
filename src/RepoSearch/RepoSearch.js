@@ -1,7 +1,7 @@
 import React from 'react';
 
-const repoSearch = () => {
+const RepoSearch = () => {
     return <input type = 'text' placeholder = 'Search' />;
 };
 
-export default repoSearch;
+export default RepoSearch;
