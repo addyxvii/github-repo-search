@@ -16,7 +16,7 @@ const useRepoSearch = (query)=> {
         })
       })
     }
-  }, [query])
+  }, [query, repoResults])
 
 
   return {repoResults, setRepoResults};
