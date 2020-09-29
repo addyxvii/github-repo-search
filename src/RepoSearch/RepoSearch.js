@@ -2,9 +2,13 @@ import React from 'react';
 
 const RepoSearch = ({ query, setRepoSearchState }) => {
     const textInput = React.createRef();
-    return <form>
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      setRepoSearchState(textInput.current.value);
+    }
+    return <form onSubmit={handleSubmit}>
             <input id='search' type='text' ref={textInput} placeholder='Search' />
-            <button onClick={setRepoSearchState(textInput)}>GO</button>
+            <button type="submit">GO</button>
         </form>
 };
 
