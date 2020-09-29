@@ -7,7 +7,6 @@
 
 # testing
 /coverage
-repolist.json
 
 # production
 /build
