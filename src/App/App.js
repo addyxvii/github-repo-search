@@ -19,14 +19,24 @@ const useRepoSearch = (query)=> {
     }
   }, [query, repoResults])
 
+  // const useRepoSort = ()=> {
+  //   console.log(props.sortByStars);
+  // //   const [ sortByStars, setSortByStars ] = useState();
+  // //   if (props.sortByStars) {
+  // //     const sortedByStars = repoResults.data.data.repos[i].stars
+  // //     setRepoResults(sortedByStars)
+  //   }
+  // }
+
 
   return {repoResults, setRepoResults};
 }
 
 function App() {
   const [repoSearchState, setRepoSearchState] = useState();
-    const {repoResults, setRepoResults} = useRepoSearch(repoSearchState);
+    const {repoResults} = useRepoSearch(repoSearchState);
     const [selectedRepo, setSelectedRepo] = useState();
+
   return (
     <main className="App">
 
