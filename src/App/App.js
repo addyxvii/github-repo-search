@@ -4,6 +4,7 @@ import './App.css';
 
 import RepoSearch from '../RepoSearch/RepoSearch';
 import RepoList from '../RepoList/RepoList';
+import RepoSort from '../RepoSort/RepoSort';
 
 const useRepoSearch = (query)=> {
   const [repoResults, setRepoResults] = useState();
@@ -39,6 +40,9 @@ function App() {
         <>
         <section className="RepoSearch">
           <RepoSearch query={repoSearchState} setRepoSearchState={setRepoSearchState} />
+          <section className="RepoSort">
+            <RepoSort />
+          </section>
         </section>
         <section className="RepoList">
           <RepoList query={ repoSearchState } repoResults={repoResults} setSelectedRepo={setSelectedRepo}  />
