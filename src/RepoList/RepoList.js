@@ -5,6 +5,7 @@ import './RepoList.css';
 
 const RepoList = ({ query, repoResults, setSelectedRepo }) => {
     return <div>
+        {console.log(repoResults, "THIS IS COMING FROM THE REPO LIST YOU DUMMY")}
         <ul>
             {repoResults && repoResults.repos ? repoResults.repos.map((repo, index) => {
                 return (<li onClick={() => setSelectedRepo(repo)} key={index}>

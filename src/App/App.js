@@ -7,7 +7,7 @@ import RepoList from '../RepoList/RepoList';
 import RepoSort from '../RepoSort/RepoSort';
 
 const useRepoSearch = (query)=> {
-  const [repoResults, setRepoResults] = useState();
+  const [repoResults, setRepoResults] = useState('');
 
   useEffect(() => {
     if(query && !repoResults){
@@ -50,11 +50,12 @@ function App() {
         <section className="RepoSearch">
           <RepoSearch query={repoSearchState} setRepoSearchState={setRepoSearchState} />
           <section className="RepoSort">
-            <RepoSort />
+            <RepoSort repoResults={repoResults}/>
           </section>
         </section>
         <section className="RepoList">
           <RepoList query={ repoSearchState } repoResults={repoResults} setSelectedRepo={setSelectedRepo}  />
+          {console.log(repoResults)}
         </section>
 
         </>
