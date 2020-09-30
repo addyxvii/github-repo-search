@@ -7,17 +7,17 @@ import RepoList from '../RepoList/RepoList';
 import RepoSort from '../RepoSort/RepoSort';
 
 const useRepoSearch = (query)=> {
-  const [repoResults, setRepoResults] = useState('');
+  const [repoResults, setRepoResults] = useState([]);
 
   useEffect(() => {
-    if(query && !repoResults){
+    if(query) {
       fetch(`https://repo-review-api.herokuapp.com/search/github/repos/${query}`).then(response => {
         return response.json().then(data => {
           setRepoResults(data.data);
         })
       })
     }
-  }, [query, repoResults])
+  }, [query])
 
   // const useRepoSort = ()=> {
   //   console.log(props.sortByStars);
@@ -55,7 +55,7 @@ function App() {
         </section>
         <section className="RepoList">
           <RepoList query={ repoSearchState } repoResults={repoResults} setSelectedRepo={setSelectedRepo}  />
-          {console.log(repoResults)}
+          {console.log("THESE ARE THE REPO RESULTS", repoResults)}
         </section>
 
         </>
