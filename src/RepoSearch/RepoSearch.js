@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RepoSearch = ({ query, setRepoSearchState }) => {
+const RepoSearch = ({ setRepoSearchState }) => {
     const textInput = React.createRef();
     const handleSubmit = (e) => {
       e.preventDefault();

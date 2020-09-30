@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './RepoList.css';
+
 
 const RepoList = ({ query, repoResults, setSelectedRepo }) => {
     return <div>
