@@ -29,22 +29,26 @@ const RepoSort = ({repoResults})=> {
     }
     return <div>
             <input type='checkbox' onChange={handleToggle} name="stars" checked={sortByStars}  />
+            {console.log(repos)}
             <label htmlFor="stars">Sort by Stars</label>
             {sortByStars ?
                  <Datasort
                  data={repos}
-                 paginate
-                 render={({ data }) => (
+                 render={({ data, sortBy, setSortBy, direction, toggleDirection }) => (
                      <table>
-                     <thead>
+                     <thead 
+                     setSortBy={setSortBy}
+                     sortBy={sortBy}
+                     direction={direction}
+                     toggleDirection={toggleDirection}>
                          <tr>
                          <td>Stars</td>
                          <td>Name</td>
                          </tr>
                      </thead>
                      <tbody>
-                         {data.map(({ stars, name }) => (
-                         <tr key={stars}>
+                         {data.map(({ description, stars, name }) => (
+                         <tr key={description}>
                              <td>{stars}</td>
                              <td>{name}</td>
                          </tr>
